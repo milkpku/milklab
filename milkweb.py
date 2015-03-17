@@ -1,3 +1,4 @@
+# coding:utf8
 #!/usr/bin/env python
 #
 # Copyright 2007 Google Inc.
@@ -16,12 +17,10 @@
 #
 import webapp2
 import datetime
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
     	message = '<p>The time is: %s <p>' % datetime.datetime.now()
         self.response.write(message)
-
-app = webapp2.WSGIApplication([
+        app = webapp2.WSGIApplication([
     ('/', MainHandler)
-], debug=True)
+    ], debug=True)
